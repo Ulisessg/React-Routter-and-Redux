@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: './',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -62,7 +62,7 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/[name].css',
+      filename: './assets/[name].css',
     }),
   ],
 };
