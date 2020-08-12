@@ -1,6 +1,6 @@
 .header {
   align-items: center;
-  background: #8f57fd;
+  background: #3d4240;
   color: white;
   display: flex;
   height: 100px;
@@ -8,6 +8,8 @@
   top: 0px;
   width: 100%;
 }
+
+
 
 .header__img {
   margin-left: 30px;
@@ -26,6 +28,10 @@
   position: absolute;
   width: 100px;
   text-align: right;
+ 
+}
+.header__menu ul a{
+  color:  white;
 }
 
 .header__menu:hover ul, ul:hover {
@@ -43,6 +49,7 @@
 
 .header__menu li a:hover {
   text-decoration: underline;
+  
 }
 
 .header__menu--profile {
@@ -54,4 +61,11 @@
 .header__menu--profile img {
   margin-right: 8px;
   width: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.header__menu--profile ul a  {
+  color: white;
+
 }
