@@ -1,31 +1,29 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import Header from "../components/Header";
+import Header from '../components/Header';
 import { registerRequest } from '../actions';
-import { Link } from "react-router-dom";
-import "../assets/styles/components/Register.scss";
+import { Link } from 'react-router-dom';
+import '../assets/styles/components/Register.scss';
 
 const Register = (props) => {
-
   const [form, setValues] = useState({
     email: '',
     name: '',
     password: '',
   });
 
-  const handleInput = event => {
+  const handleInput = (event) => {
     setValues({
       ...form,
-      [event.target.name]: event.target.value
-    })
+      [event.target.name]: event.target.value,
+    });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     props.registerRequest(form);
-    props.history.push('/');
-
-  }
+    props.history.push('./');
+  };
   return (
     <>
       <Header isRegister />
@@ -55,19 +53,19 @@ const Register = (props) => {
               onChange={handleInput}
             />
 
-            <button className="button" type="submit">Registrarme</button>
+            <button className="button" type="submit">
+              Registrarme
+            </button>
           </form>
           <Link to="/login">Iniciar sesión</Link>
         </section>
       </section>
     </>
   );
-}
+};
 
 const mapDispatchToProps = {
   registerRequest,
-
 };
-
 
 export default connect(null, mapDispatchToProps)(Register);
